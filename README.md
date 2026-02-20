@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Description
 
 This repository contains a training-focused UI automation project built with **Python**, **Playwright**, and **pytest**, targeting the OrangeHRM demo application.
@@ -47,3 +48,7 @@ Run tests:
 ```bash
 uv run pytest
 ```
+=======
+# orange-hrm-playwright-aya
+Playwright automation project for Orange HRM with CI/CD pipeline
+>>>>>>> aec60d024f5caa7c912be3e333b84736575f4a44

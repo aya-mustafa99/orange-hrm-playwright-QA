@@ -8,7 +8,10 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+<<<<<<< HEAD
 .venv
+=======
+>>>>>>> aec60d024f5caa7c912be3e333b84736575f4a44
 build/
 develop-eggs/
 dist/
