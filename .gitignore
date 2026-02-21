@@ -6,9 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribution / packaging
-.Python
-<<<<<<< HEAD
 .venv
 =======
 >>>>>>> aec60d024f5caa7c912be3e333b84736575f4a44
