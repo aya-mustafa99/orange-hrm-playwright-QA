@@ -1,3 +1,4 @@
+
 ## Description
 
 This repository contains a training-focused UI automation project built with **Python**, **Playwright**, and **pytest**, targeting the OrangeHRM demo application.
