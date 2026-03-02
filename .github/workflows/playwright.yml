@@ -37,3 +37,10 @@ jobs:
         with:
           name: pytest-report
           path: report.html
+
+      - name: Install lint
+        run: |
+          pip install pylint pylint-pytest
+      - name: Lint code
+        run: |
+          pylint **/*.py    
