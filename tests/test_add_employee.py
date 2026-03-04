@@ -1,4 +1,4 @@
-import re
+
 from playwright.sync_api import Page, expect
 
 
@@ -21,7 +21,8 @@ def test_example(page: Page) -> None:
     page.get_by_role("textbox").nth(4).click()
     page.get_by_role("textbox").nth(4).fill("444444")
     page.get_by_role("button", name="Save").click()
-    page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/193")
+    url="https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/193"
+    page.goto(url)
     expect(page.locator("#app")).to_contain_text("Personal Details")
     expect(page.locator("#app")).to_contain_text("Save")
     page.locator("form").filter(has_text="Employee Full NameEmployee").get_by_role("button").click()
