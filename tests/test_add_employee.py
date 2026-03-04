@@ -9,7 +9,7 @@ def test_example(page: Page) -> None:
     page.get_by_role("textbox", name="First Name").fill("ayaa")
     page.get_by_role("textbox", name="Middle Name").fill("ayaa")
     page.get_by_role("textbox", name="Last Name").fill("ayaa")
-    page.get_by_role("textbox",name="Employee Id").fill("7777777")
+    page.get_by_role("textbox").nth(4).fill("777777")
     page.get_by_role("button", name="Save").click()
     page.locator("form").filter(has_text="Employee Full NameEmployee").get_by_role("button").click()
     page.get_by_role("link", name="Employee List").click()
