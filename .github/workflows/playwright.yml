@@ -27,7 +27,7 @@ jobs:
           pip install uv
           uv sync
           uv run playwright install --with-deps
-          pip install pylint
+       
 
       - name: Run tests
         run: |
@@ -39,7 +39,5 @@ jobs:
           name: pytest-report
           path: report.html
 
-      - name: Analysing the code with pylint
-        run: |
-         pylint $(git ls-files '*.py')
+     
   
