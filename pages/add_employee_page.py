@@ -27,7 +27,10 @@ class AddEmployeePage:
         self.save_btn = page.get_by_role("button", name="Save")
 
     def open_add_employee(self):
+        self.pim_menu.wait_for(state="visible", timeout=10000)
         self.pim_menu.click()
+        self.page.wait_for_load_state("networkidle") 
+        self.add_employee_btn.wait_for(state="visible", timeout=5000)
         self.add_employee_btn.click()
 
     def fill_employee_name(self, first, middle, last):
