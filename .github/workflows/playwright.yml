@@ -27,6 +27,8 @@ jobs:
           pip install uv
           uv sync
           uv run playwright install --with-deps
+          uvx ruff check
+       
 
       - name: Run tests
         run: |
@@ -37,3 +39,6 @@ jobs:
         with:
           name: pytest-report
           path: report.html
+
+     
+  
