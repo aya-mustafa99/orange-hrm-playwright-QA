@@ -15,7 +15,6 @@ class AddEmployeePage:
         self.last_name = page.locator("input[name='lastName']")
 
         # login details
-       
         self.login_details_checkbox = page.locator("input[type='checkbox']")
         self.username_input = page.get_by_label("Username")
         self.password_input = page.get_by_label("Password")
