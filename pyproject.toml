@@ -9,6 +9,7 @@ dependencies = [
     "pytest-playwright>=0.7.2",
     "pytest-html>=3.2.0",
     "allure-pytest>=2.15.3",
+    "faker>=40.13.0",
 ]
 [tool.pylint.messages_control]
 disable = ["missing-module-docstring", "missing-function-docstring"]
