@@ -1,1 +1,0 @@
-{"uuid": "06fb0ec2-7dbf-4565-945b-2172e27fd6ec", "children": ["38907502-a8d7-455d-8b10-c3ece2555b4d"], "befores": [{"name": "add_vacancy_page", "status": "passed", "start": 1775928556901, "stop": 1775928577348}], "afters": [{"name": "add_vacancy_page::0", "status": "passed", "start": 1775928678617, "stop": 1775928678617}], "start": 1775928556901, "stop": 1775928678617}
