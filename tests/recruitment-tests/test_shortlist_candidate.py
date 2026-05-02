@@ -12,22 +12,21 @@ def setup(page: Page):
     recruitment = RecruitmentPage(page)
     recruitment.go_to_add_vacancy()
     vacancy_data = VacancyData()
-    AddVacanciesPage(page).add_vacancy(vacancy_data)
+    add_vacancy_page = AddVacanciesPage(page)
+    created_vacancy_name = add_vacancy_page.add_vacancy(vacancy_data)
     recruitment.go_to_add_candidate()
-    candidate_data = CandidateData(vacancy=vacancy_data.vacancy_name)
-    AddCandidatePage(page).add_candidate(candidate_data)
+    candidate_data = CandidateData(vacancy=created_vacancy_name)
+    add_candidate_page = AddCandidatePage(page)
+    add_candidate_page.add_candidate(candidate_data)
     candidate_page = AddCandidatePage(page)
     candidate_page.navigate()
-    candidate_data = CandidateData(vacancy=vacancy_data.vacancy_name)
-    candidate_page.add_candidate(candidate_data)
     yield page, candidate_data, vacancy_data
-    recruitment = RecruitmentPage(page)
     recruitment.navigate()
     recruitment.delete_candidate_by_name(
         f"{candidate_data.first_name} {candidate_data.last_name}"
     )
     recruitment.go_to_vacancies()
-    recruitment.delete_vacancy_by_name(vacancy_data.vacancy_name)
+    recruitment.delete_vacancy_by_name(created_vacancy_name)
 
 
 def test_shortlist_candidate(setup):

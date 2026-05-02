@@ -5,17 +5,12 @@ from pages.login_page import LoginPage
 
 fake = Faker()
 
-@pytest.fixture(scope="function", autouse=True)
-def goto(page: Page):
-    """Fixture to navigate to the base URL."""
-    base_url = "https://opensource-demo.orangehrmlive.com/"
-    page.set_default_timeout(100000)
-    page.goto(base_url)
-
 @pytest.fixture(autouse=True)
 def login(page: Page):
-    login_page = LoginPage(page)
-    login_page.login("Admin", "admin123")
+    base_url = "https://opensource-demo.orangehrmlive.com/"
+    page.set_default_timeout(120000)  
+    page.goto(base_url)
+    LoginPage(page).login("Admin", "admin123")
     return page
 
 @pytest.fixture
@@ -45,8 +40,8 @@ def candidate_data(vacancy_data):
         "first_name": fake.first_name(),
         "middle_name": fake.first_name(),
         "last_name": fake.last_name(),
+        "vacancy": vacancy_data.name,
         "email": fake.email(),
         "contact": fake.phone_number(),
-        "vacancy": vacancy_data["name"],
         "resume_path": "tests/files/resume.pdf"
     }
